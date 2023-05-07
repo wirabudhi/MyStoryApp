@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.StoryActivity">
+
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_upload_story"
+        android:contentDescription="@string/detail_photo" />
+
+    <Button
+        android:id="@+id/btn_camera"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="@string/camera"
+        android:background="@drawable/border"
+        app:backgroundTint="@color/cyan_500"
+        app:layout_constraintStart_toStartOf="@+id/iv_image"
+        app:layout_constraintTop_toBottomOf="@+id/iv_image" />
+
+    <Button
+        android:id="@+id/btn_gallery"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="@string/gallery"
+        android:background="@drawable/border"
+        app:backgroundTint="@color/cyan_500"
+        app:layout_constraintEnd_toEndOf="@+id/iv_image"
+        app:layout_constraintTop_toBottomOf="@+id/iv_image" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/ed_add_description"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/border"
+        android:gravity="top"
+        android:hint="@string/input_description"
+        android:inputType="textMultiLine"
+        android:lines="5"
+        android:overScrollMode="always"
+        android:scrollbars="none"
+        android:scrollHorizontally="false"
+        app:layout_constraintEnd_toEndOf="@+id/btn_gallery"
+        app:layout_constraintStart_toStartOf="@+id/btn_camera"
+        app:layout_constraintTop_toBottomOf="@+id/btn_camera" />
+
+    <CheckBox
+        android:id="@+id/cb_add_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/use_current_location"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@id/ed_add_description"
+        app:layout_constraintTop_toBottomOf="@id/ed_add_description"
+        app:layout_constraintEnd_toEndOf="@id/ed_add_description"/>
+
+    <Button
+        android:id="@+id/button_add"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:text="@string/upload"
+        app:backgroundTint="@color/cyan_500"
+        android:background="@drawable/border"
+        app:layout_constraintEnd_toEndOf="@+id/ed_add_description"
+        app:layout_constraintStart_toStartOf="@+id/ed_add_description"
+        app:layout_constraintTop_toBottomOf="@+id/cb_add_location" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
