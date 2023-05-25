@@ -36,7 +36,8 @@ class EditTextPassword : AppCompatEditText {
 
                 when {
                     password.isEmpty() -> error = context.getString(R.string.error_empty_password)
-                    password.length < 7 -> error = context.getString(R.string.error_password_too_short)
+                    password.length < 8 -> error = context.getString(R.string.error_password_too_short)
+                    else -> error = null
                 }
             }
             override fun afterTextChanged(s: Editable) {}
